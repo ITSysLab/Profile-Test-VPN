@@ -34,6 +34,21 @@
                         "display": ["Inter", "sans-serif"]
                     },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    animation: {
+                        "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+                        "float": "float 6s ease-in-out infinite",
+                        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            "0%": { opacity: "0", transform: "translateY(20px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" },
+                        },
+                        float: {
+                            "0%, 100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-10px)" },
+                        }
+                    }
                 },
             },
         }
@@ -70,7 +85,7 @@
                 </nav>
                 <div class="flex items-center gap-4">
                     <button
-                        class="rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        class="rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 hover:scale-105 hover:shadow-primary/40 active:scale-95 transition-all duration-300">
                         Личный кабинет
                     </button>
                 </div>
@@ -80,7 +95,7 @@
             <!-- Hero Section -->
             <section class="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
                 <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
-                    <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-8 opacity-0 animate-fade-in-up">
                         <div class="space-y-4">
                             <h1
                                 class="text-4xl font-black leading-tight tracking-tight text-slate-900 dark:text-white md:text-6xl">
@@ -91,44 +106,48 @@
                                 один клик.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-wrap gap-4 [animation-delay:200ms] opacity-0 animate-fade-in-up">
                             <button
-                                class="rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-xl shadow-primary/30 hover:scale-[1.02] transition-transform">
+                                class="rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-xl shadow-primary/30 hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 active:scale-95 transition-all duration-300">
                                 Попробовать бесплатно
                             </button>
                             <button
-                                class="rounded-xl border border-slate-300 dark:border-slate-700 px-8 py-4 text-base font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                class="rounded-xl border border-slate-300 dark:border-slate-700 px-8 py-4 text-base font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all duration-300">
                                 Узнать больше
                             </button>
                         </div>
-                        <div class="flex items-center gap-4 text-sm text-slate-500">
+                        <div
+                            class="flex items-center gap-4 text-sm text-slate-500 [animation-delay:400ms] opacity-0 animate-fade-in-up">
                             <div class="flex -space-x-2">
-                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-400"
+                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-400 hover:-translate-y-1 transition-transform"
                                     data-alt="User avatar 1"></div>
-                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-500"
+                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-500 hover:-translate-y-1 transition-transform"
                                     data-alt="User avatar 2"></div>
-                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-600"
+                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-600 hover:-translate-y-1 transition-transform"
                                     data-alt="User avatar 3"></div>
                             </div>
                             <span>Более 50,000 пользователей в России</span>
                         </div>
                     </div>
-                    <div class="relative flex justify-center">
+                    <div class="relative flex justify-center opacity-0 animate-fade-in-up [animation-delay:300ms]">
                         <div
-                            class="relative aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-primary/20 to-transparent p-1">
+                            class="relative aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-primary/20 to-transparent p-1 animate-float">
                             <div
-                                class="h-full w-full rounded-[1.4rem] bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                                class="h-full w-full rounded-[1.4rem] bg-slate-900 flex items-center justify-center relative overflow-hidden group">
                                 <!-- Abstract Globe/Connection Visual -->
                                 <div
                                     class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
                                 </div>
-                                <span class="material-symbols-outlined text-[12rem] text-primary/50">public</span>
+                                <span
+                                    class="material-symbols-outlined text-[12rem] text-primary/50 group-hover:scale-110 transition-transform duration-700">public</span>
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="h-48 w-48 rounded-full border border-primary/30 animate-pulse"></div>
-                                    <div class="absolute h-64 w-64 rounded-full border border-primary/10"></div>
+                                    <div class="h-48 w-48 rounded-full border border-primary/30 animate-pulse-slow">
+                                    </div>
+                                    <div class="absolute h-64 w-64 rounded-full border border-primary/10 animate-spin"
+                                        style="animation-duration: 15s;"></div>
                                 </div>
                                 <span
-                                    class="material-symbols-outlined absolute text-5xl text-primary drop-shadow-glow">verified_user</span>
+                                    class="material-symbols-outlined absolute text-5xl text-primary drop-shadow-glow group-hover:scale-125 transition-transform duration-500">verified_user</span>
                             </div>
                         </div>
                     </div>
@@ -145,9 +164,9 @@
                     </div>
                     <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
                         <div
-                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary transition-colors">
+                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                             <div
-                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 group-active:scale-95 transition-all duration-300">
                                 <span class="material-symbols-outlined">bolt</span>
                             </div>
                             <h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Высокая скорость</h3>
@@ -155,9 +174,9 @@
                                 просмотр 4K видео и мгновенную загрузку страниц.</p>
                         </div>
                         <div
-                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary transition-colors">
+                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                             <div
-                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 group-active:scale-95 transition-all duration-300">
                                 <span class="material-symbols-outlined">security</span>
                             </div>
                             <h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Анонимность</h3>
@@ -165,9 +184,9 @@
                                 политика отсутствия логов защищают вашу приватность.</p>
                         </div>
                         <div
-                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary transition-colors">
+                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                             <div
-                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 group-active:scale-95 transition-all duration-300">
                                 <span class="material-symbols-outlined">ads_click</span>
                             </div>
                             <h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Простота использования
@@ -188,7 +207,7 @@
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
                     <!-- Basic Tier -->
                     <div
-                        class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-8">
+                        class="group flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-8 hover:-translate-y-2 hover:shadow-xl hover:border-primary/50 transition-all duration-300">
                         <div class="mb-8">
                             <h3 class="text-lg font-bold text-slate-900 dark:text-white">Месячный</h3>
                             <div class="mt-4 flex items-baseline gap-1">
@@ -197,24 +216,27 @@
                             </div>
                         </div>
                         <ul class="mb-8 flex-grow space-y-4 text-sm text-slate-600 dark:text-slate-400">
-                            <li class="flex items-center gap-3"><span
-                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> 1
+                            <li
+                                class="flex items-center gap-3 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span> 1
                                 активное устройство</li>
-                            <li class="flex items-center gap-3"><span
-                                    class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            <li
+                                class="flex items-center gap-3 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
                                 Безлимитный трафик</li>
-                            <li class="flex items-center gap-3"><span
-                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> Все
+                            <li
+                                class="flex items-center gap-3 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Все
                                 локации (50+ стран)</li>
                         </ul>
                         <button
-                            class="w-full rounded-xl border border-primary text-primary py-3 font-bold hover:bg-primary hover:text-white transition-all">Выбрать</button>
+                            class="w-full rounded-xl border border-primary text-primary py-3 font-bold hover:bg-primary hover:text-white hover:scale-105 active:scale-95 transition-all duration-300">Выбрать</button>
                     </div>
                     <!-- Recommended Tier -->
                     <div
-                        class="relative flex flex-col rounded-2xl border-2 border-primary bg-slate-900 p-8 shadow-2xl shadow-primary/20 scale-105">
+                        class="group relative flex flex-col rounded-2xl border-2 border-primary bg-slate-900 p-8 shadow-2xl shadow-primary/20 scale-105 hover:scale-110 hover:shadow-primary/40 transition-all duration-300 z-10">
                         <div
-                            class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white uppercase tracking-wider">
+                            class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white uppercase tracking-wider shadow-lg shadow-primary/30">
                             Выгодный</div>
                         <div class="mb-8 text-white">
                             <h3 class="text-lg font-bold">Годовой</h3>
@@ -225,26 +247,26 @@
                             <p class="mt-2 text-xs text-primary font-medium">Экономия 60%</p>
                         </div>
                         <ul class="mb-8 flex-grow space-y-4 text-sm text-slate-300">
-                            <li class="flex items-center gap-3"><span
+                            <li class="flex items-center gap-3 group-hover:text-white transition-colors"><span
                                     class="material-symbols-outlined text-primary text-xl">check_circle</span> 5
                                 устройств одновременно</li>
-                            <li class="flex items-center gap-3"><span
+                            <li class="flex items-center gap-3 group-hover:text-white transition-colors"><span
                                     class="material-symbols-outlined text-primary text-xl">check_circle</span>
                                 Приоритетная поддержка 24/7</li>
-                            <li class="flex items-center gap-3"><span
+                            <li class="flex items-center gap-3 group-hover:text-white transition-colors"><span
                                     class="material-symbols-outlined text-primary text-xl">check_circle</span>
                                 Выделенные IP-адреса</li>
-                            <li class="flex items-center gap-3"><span
+                            <li class="flex items-center gap-3 group-hover:text-white transition-colors"><span
                                     class="material-symbols-outlined text-primary text-xl">check_circle</span>
                                 Оптимизация для стриминга</li>
                         </ul>
                         <button
-                            class="w-full rounded-xl bg-primary text-white py-4 font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/30">Купить
+                            class="w-full rounded-xl bg-primary text-white py-4 font-bold hover:bg-primary/90 hover:scale-105 active:scale-95 shadow-lg shadow-primary/30 transition-all duration-300">Купить
                             сейчас</button>
                     </div>
                     <!-- Family Tier -->
                     <div
-                        class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-8">
+                        class="group flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-8 hover:-translate-y-2 hover:shadow-xl hover:border-primary/50 transition-all duration-300">
                         <div class="mb-8">
                             <h3 class="text-lg font-bold text-slate-900 dark:text-white">Семейный</h3>
                             <div class="mt-4 flex items-baseline gap-1">
@@ -253,18 +275,21 @@
                             </div>
                         </div>
                         <ul class="mb-8 flex-grow space-y-4 text-sm text-slate-600 dark:text-slate-400">
-                            <li class="flex items-center gap-3"><span
-                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> До 10
+                            <li
+                                class="flex items-center gap-3 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span> До 10
                                 устройств</li>
-                            <li class="flex items-center gap-3"><span
-                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> Общий
+                            <li
+                                class="flex items-center gap-3 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Общий
                                 доступ для всей семьи</li>
-                            <li class="flex items-center gap-3"><span
-                                    class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            <li
+                                class="flex items-center gap-3 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
                                 Родительский контроль</li>
                         </ul>
                         <button
-                            class="w-full rounded-xl border border-primary text-primary py-3 font-bold hover:bg-primary hover:text-white transition-all">Выбрать</button>
+                            class="w-full rounded-xl border border-primary text-primary py-3 font-bold hover:bg-primary hover:text-white hover:scale-105 active:scale-95 transition-all duration-300">Выбрать</button>
                     </div>
                 </div>
             </section>
@@ -278,7 +303,7 @@
                     </p>
                     <div class="mt-10 flex flex-wrap justify-center gap-4">
                         <button
-                            class="rounded-xl bg-white px-8 py-4 text-lg font-bold text-primary hover:bg-slate-100 transition-colors">
+                            class="rounded-xl bg-white px-8 py-4 text-lg font-bold text-primary hover:bg-slate-100 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95 transition-all duration-300">
                             Начать бесплатно
                         </button>
                     </div>
