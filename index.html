@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="SafeGate VPN - быстрый и безопасный доступ к любому контенту">
+
+    <!-- Preconnect для ускорения загрузки шрифтов и скриптов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+
+    <!-- Шрифты (удалено дублирование Material Symbols) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS (рекомендуется скомпилировать для production) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined text-3xl">shield_lock</span>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">SafeGate VPN</h2>
+                </div>
+                <nav class="hidden items-center gap-8 md:flex">
+                    <a class="text-sm font-medium hover:text-primary transition-colors"
+                        href="#features">Преимущества</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Тарифы</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#how-it-works">Как это
+                        работает</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#support">Поддержка</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        Личный кабинет
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+                <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+                    <div class="flex flex-col gap-8">
+                        <div class="space-y-4">
+                            <h1
+                                class="text-4xl font-black leading-tight tracking-tight text-slate-900 dark:text-white md:text-6xl">
+                                Быстрый и безопасный доступ к любому контенту
+                            </h1>
+                            <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                                Надежный VPN с серверами по всему миру. Никаких блокировок, только свобода интернета в
+                                один клик.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <button
+                                class="rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-xl shadow-primary/30 hover:scale-[1.02] transition-transform">
+                                Попробовать бесплатно
+                            </button>
+                            <button
+                                class="rounded-xl border border-slate-300 dark:border-slate-700 px-8 py-4 text-base font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                Узнать больше
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm text-slate-500">
+                            <div class="flex -space-x-2">
+                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-400"
+                                    data-alt="User avatar 1"></div>
+                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-500"
+                                    data-alt="User avatar 2"></div>
+                                <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-slate-600"
+                                    data-alt="User avatar 3"></div>
+                            </div>
+                            <span>Более 50,000 пользователей в России</span>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center">
+                        <div
+                            class="relative aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-primary/20 to-transparent p-1">
+                            <div
+                                class="h-full w-full rounded-[1.4rem] bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                                <!-- Abstract Globe/Connection Visual -->
+                                <div
+                                    class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+                                </div>
+                                <span class="material-symbols-outlined text-[12rem] text-primary/50">public</span>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="h-48 w-48 rounded-full border border-primary/30 animate-pulse"></div>
+                                    <div class="absolute h-64 w-64 rounded-full border border-primary/10"></div>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined absolute text-5xl text-primary drop-shadow-glow">verified_user</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Features Section -->
+            <section class="bg-slate-50 dark:bg-slate-900/50 py-20" id="features">
+                <div class="mx-auto max-w-7xl px-6 lg:px-10">
+                    <div class="mb-16 text-center">
+                        <h2 class="text-3xl font-black text-slate-900 dark:text-white md:text-4xl">Наши преимущества
+                        </h2>
+                        <p class="mt-4 text-slate-600 dark:text-slate-400">Почему выбирают SafeGate VPN для ежедневного
+                            использования</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                        <div
+                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary transition-colors">
+                            <div
+                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined">bolt</span>
+                            </div>
+                            <h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Высокая скорость</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Наши 10Gbps серверы обеспечивают плавный
+                                просмотр 4K видео и мгновенную загрузку страниц.</p>
+                        </div>
+                        <div
+                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary transition-colors">
+                            <div
+                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined">security</span>
+                            </div>
+                            <h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Анонимность</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Шифрование военного уровня AES-256 и строгая
+                                политика отсутствия логов защищают вашу приватность.</p>
+                        </div>
+                        <div
+                            class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 hover:border-primary transition-colors">
+                            <div
+                                class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined">ads_click</span>
+                            </div>
+                            <h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Простота использования
+                            </h3>
+                            <p class="text-slate-600 dark:text-slate-400">Простое приложение для всех ваших устройств.
+                                Подключайтесь к безопасному интернету в один тап.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Pricing Section -->
+            <section class="mx-auto max-w-7xl px-6 py-24 lg:px-10" id="pricing">
+                <div class="mb-16 text-center">
+                    <h2 class="text-3xl font-black text-slate-900 dark:text-white md:text-4xl">Выберите свой тариф</h2>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400">Гибкие планы для любых нужд с гарантией возврата
+                        средств</p>
+                </div>
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    <!-- Basic Tier -->
+                    <div
+                        class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-8">
+                        <div class="mb-8">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Месячный</h3>
+                            <div class="mt-4 flex items-baseline gap-1">
+                                <span class="text-4xl font-black text-slate-900 dark:text-white">499 ₽</span>
+                                <span class="text-slate-500">/мес</span>
+                            </div>
+                        </div>
+                        <ul class="mb-8 flex-grow space-y-4 text-sm text-slate-600 dark:text-slate-400">
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> 1
+                                активное устройство</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Безлимитный трафик</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> Все
+                                локации (50+ стран)</li>
+                        </ul>
+                        <button
+                            class="w-full rounded-xl border border-primary text-primary py-3 font-bold hover:bg-primary hover:text-white transition-all">Выбрать</button>
+                    </div>
+                    <!-- Recommended Tier -->
+                    <div
+                        class="relative flex flex-col rounded-2xl border-2 border-primary bg-slate-900 p-8 shadow-2xl shadow-primary/20 scale-105">
+                        <div
+                            class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white uppercase tracking-wider">
+                            Выгодный</div>
+                        <div class="mb-8 text-white">
+                            <h3 class="text-lg font-bold">Годовой</h3>
+                            <div class="mt-4 flex items-baseline gap-1">
+                                <span class="text-4xl font-black">199 ₽</span>
+                                <span class="text-slate-400">/мес</span>
+                            </div>
+                            <p class="mt-2 text-xs text-primary font-medium">Экономия 60%</p>
+                        </div>
+                        <ul class="mb-8 flex-grow space-y-4 text-sm text-slate-300">
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> 5
+                                устройств одновременно</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Приоритетная поддержка 24/7</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Выделенные IP-адреса</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Оптимизация для стриминга</li>
+                        </ul>
+                        <button
+                            class="w-full rounded-xl bg-primary text-white py-4 font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/30">Купить
+                            сейчас</button>
+                    </div>
+                    <!-- Family Tier -->
+                    <div
+                        class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-8">
+                        <div class="mb-8">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Семейный</h3>
+                            <div class="mt-4 flex items-baseline gap-1">
+                                <span class="text-4xl font-black text-slate-900 dark:text-white">899 ₽</span>
+                                <span class="text-slate-500">/мес</span>
+                            </div>
+                        </div>
+                        <ul class="mb-8 flex-grow space-y-4 text-sm text-slate-600 dark:text-slate-400">
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> До 10
+                                устройств</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span> Общий
+                                доступ для всей семьи</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Родительский контроль</li>
+                        </ul>
+                        <button
+                            class="w-full rounded-xl border border-primary text-primary py-3 font-bold hover:bg-primary hover:text-white transition-all">Выбрать</button>
+                    </div>
+                </div>
+            </section>
+            <!-- CTA Section -->
+            <section class="mx-auto max-w-7xl px-6 py-12 lg:px-10">
+                <div class="rounded-3xl bg-primary px-8 py-16 text-center text-white lg:py-24">
+                    <h2 class="text-3xl font-black md:text-5xl">Готовы к свободному интернету?</h2>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg text-primary-100 opacity-90">
+                        Начните использовать SafeGate VPN сегодня и забудьте о блокировках раз и навсегда.
+                        Бесплатный пробный период 7 дней.
+                    </p>
+                    <div class="mt-10 flex flex-wrap justify-center gap-4">
+                        <button
+                            class="rounded-xl bg-white px-8 py-4 text-lg font-bold text-primary hover:bg-slate-100 transition-colors">
+                            Начать бесплатно
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-16">
+            <div class="mx-auto max-w-7xl px-6 lg:px-10">
+                <div class="grid grid-cols-1 gap-12 md:grid-cols-4">
+                    <div class="col-span-1 md:col-span-1">
+                        <div class="flex items-center gap-2 text-primary">
+                            <span class="material-symbols-outlined text-3xl">shield_lock</span>
+                            <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">SafeGate VPN
+                            </h2>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
+                            Ваш надежный проводник в мире свободного интернета. Безопасность и анонимность
+                            гарантированы.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                            Продукт</h4>
+                        <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                            <li><a class="hover:text-primary transition-colors" href="#">Преимущества</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Тарифы</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Серверы</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Скачать</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                            Компания</h4>
+                        <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                            <li><a class="hover:text-primary transition-colors" href="#">О нас</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Блог</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Партнерская программа</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                            Поддержка</h4>
+                        <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                            <li><a class="hover:text-primary transition-colors" href="#">Центр помощи</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Связаться с нами</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Статус серверов</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="mt-16 flex flex-col items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-8 md:flex-row">
+                    <p class="text-xs text-slate-500 dark:text-slate-500">
+                        © 2024 SafeGate VPN. Все права защищены.
+                    </p>
+                    <div class="mt-4 flex gap-6 md:mt-0">
+                        <a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Политика
+                            конфиденциальности</a>
+                        <a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Условия
+                            использования</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
